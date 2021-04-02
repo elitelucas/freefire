@@ -572,13 +572,13 @@ Account
         function WorkerAfterImageAndText() {
             $('#worker_after_text').show();
             $('#worker_before_text').hide();
-            $('#worker_image').attr('src', '/public/assets/images/workers/worker-after.png');
+            $('#worker_image').attr('src', '/assets/images/workers/worker-after.png');
         }
 
         function WorkerBeforeImageAndText() {
             $('#worker_before_text').show();
             $('#worker_after_text').hide();
-            $('#worker_image').attr('src', '/public/assets/images/workers/worker-before.png');
+            $('#worker_image').attr('src', '/assets/images/workers/worker-before.png');
         }
 
         function startCollectTimer() {

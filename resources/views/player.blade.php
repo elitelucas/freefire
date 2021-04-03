@@ -316,7 +316,7 @@ Player
             $('#swal_after_error').hide();
             $('#swal_after_success').hide();
 
-            $('img#changed_player_image').attr('src', '/public/assets/images/players/' + player_image);
+            $('img#changed_player_image').attr('src', '/assets/images/players/' + player_image);
         }
 
         function cancelBuy() {

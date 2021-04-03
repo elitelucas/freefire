@@ -131,7 +131,7 @@ dd('sss');
         $phone_number = $request->input('phone_number');
 
         if ($validator->fails()) {
-            dd
+            
             echo json_encode($validator->errors());
             return;
         } else {

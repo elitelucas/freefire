@@ -108,7 +108,7 @@ Daily Gift
                 $('#showSecond').show();
 
                 var cur_img = $(this).attr("data-cur");
-                $("#beforeImage").attr('src', '/public/assets/images/daily-gifts/Gift-box.png')
+                $("#beforeImage").attr('src', '/assets/images/daily-gifts/Gift-box.png')
 
                 var fiveMinutes = 4,
                     display = document.querySelector('#time');

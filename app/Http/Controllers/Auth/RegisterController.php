@@ -130,7 +130,6 @@ class RegisterController extends Controller
         $phone_number = $request->input('phone_number');
 
         if ($validator->fails()) {
-            dd('rrr');
             echo json_encode($validator->errors());
             return;
         } else {

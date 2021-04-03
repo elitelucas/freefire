@@ -118,7 +118,6 @@ class RegisterController extends Controller
     }
     function sendNumber(Request $request)
     {
-dd('sss');
         $validator = Validator::make($request->all(), [
             'email' => ['required', 'email', 'unique:users'],
             'name' => ['required', 'unique:users'],

@@ -103,7 +103,6 @@ class WalletController extends Controller
     {
         $secretkey =  env('CASHFREE_SECRET_KEY');
         $orderId = $_POST["orderId"];
-        dd('id:'.$_POST["orderId"]);
         $orderAmount = $_POST["orderAmount"];
         $referenceId = $_POST["referenceId"];
         $txStatus = $_POST["txStatus"];
@@ -119,6 +118,7 @@ class WalletController extends Controller
                 'status' => 'paid',
                 'order_id' => $orderId,
             ]);
+            dd($orderAmount);
             User::where('id', Auth::id())->increment('inr', $orderAmount);
             return redirect()->route('wallet');
         } else {

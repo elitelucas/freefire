@@ -101,9 +101,9 @@ class WalletController extends Controller
     }
     function checkoutSuccess(Request $request)
     {
-        dd('werwer');
         $secretkey =  env('CASHFREE_SECRET_KEY');
         $orderId = $_POST["orderId"];
+        dd('id:'.$_POST["orderId"]);
         $orderAmount = $_POST["orderAmount"];
         $referenceId = $_POST["referenceId"];
         $txStatus = $_POST["txStatus"];

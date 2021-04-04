@@ -118,7 +118,6 @@ class WalletController extends Controller
                 'status' => 'paid',
                 'order_id' => $orderId,
             ]);
-            dd($orderAmount);
             User::where('id', Auth::id())->increment('inr', $orderAmount);
             return redirect()->route('wallet');
         } else {

@@ -101,6 +101,7 @@ class WalletController extends Controller
     }
     function checkoutSuccess(Request $request)
     {
+        dd('werwer');
         $secretkey =  env('CASHFREE_SECRET_KEY');
         $orderId = $_POST["orderId"];
         $orderAmount = $_POST["orderAmount"];
@@ -118,7 +119,6 @@ class WalletController extends Controller
                 'status' => 'paid',
                 'order_id' => $orderId,
             ]);
-              echo 'orderAmount'.$orderAmount;
             User::where('id', Auth::id())->increment('inr', $orderAmount);
             return redirect()->route('wallet');
         } else {

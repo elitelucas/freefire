@@ -97,8 +97,7 @@ class PlayerController extends Controller
             if (Auth::user()->inr < $player->player_price) {
                 echo 'fail';
                 return;
-            } else {  
-                dd('eee');
+            } else {            
                 User::where('id', Auth::id())->update([
                     'player_id' => $player_id,
                     'player_changed_date' => date('Y:m:d h:i:s'),

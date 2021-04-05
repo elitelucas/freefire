@@ -255,8 +255,6 @@
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <script>
     function ReadyEdit(user, idx) {
-    console.log('user.inr');
-     console.log(user.inr);
         var user = JSON.parse(user);
         $('#id').val(user.id);
         $('#name').val(user.name);
@@ -264,7 +262,7 @@
         $('#phone_number').val(user.phone_number);
         $('#gems').val(user.gems);
         $('#diamond').val(user.diamond);
-        $('#inr').val(user.inr);
+        $('#inr').val(user.inr?user.inr:0);
         $('#ign').val(user.ign);
         $('#ig_id').val(user.ig_id);
         $('#mushroom_1').val(user.user_food[0].user_food_amount);

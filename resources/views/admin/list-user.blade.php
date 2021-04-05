@@ -255,6 +255,8 @@
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <script>
     function ReadyEdit(user, idx) {
+    console.log('user.inr');
+     console.log(user.inr);
         var user = JSON.parse(user);
         $('#id').val(user.id);
         $('#name').val(user.name);

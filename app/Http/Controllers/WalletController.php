@@ -106,7 +106,6 @@ class WalletController extends Controller
         $orderAmount = $_POST["orderAmount"];
         $referenceId = $_POST["referenceId"];
         $txStatus = $_POST["txStatus"];
-        dd($txStatus);
         $paymentMode = $_POST["paymentMode"];
         $txMsg = $_POST["txMsg"];
         $txTime = $_POST["txTime"];
@@ -115,6 +114,7 @@ class WalletController extends Controller
         $hash_hmac = hash_hmac('sha256', $data, $secretkey, true);
         $computedSignature = base64_encode($hash_hmac);
         if ($txStatus == "SUCCESS") {
+            dd($orderId);
             InrDepositOrder::where('id', $orderId)->update([
                 'status' => 'paid',
                 'order_id' => $orderId,

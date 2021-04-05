@@ -66,6 +66,7 @@ class PlayerController extends Controller
     function buyPlayer(Request $request)
     {
         $player_id = $request->input('player_id');
+        dd($player_id);
 
         $player = Player::where('player_id', $player_id)->first();
         if ($player->player_price_type == 'diamonds') {

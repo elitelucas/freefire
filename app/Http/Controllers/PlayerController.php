@@ -66,7 +66,6 @@ class PlayerController extends Controller
     function buyPlayer(Request $request)
     {
         $player_id = $request->input('player_id');
-        dd($player_id);
 
         $player = Player::where('player_id', $player_id)->first();
         if ($player->player_price_type == 'diamonds') {
@@ -98,7 +97,8 @@ class PlayerController extends Controller
             if (Auth::user()->inr < $player->player_price) {
                 echo 'fail';
                 return;
-            } else {          
+            } else {  
+                dd('eee');
                 User::where('id', Auth::id())->update([
                     'player_id' => $player_id,
                     'player_changed_date' => date('Y:m:d h:i:s'),

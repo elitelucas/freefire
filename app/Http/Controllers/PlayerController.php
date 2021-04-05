@@ -94,6 +94,7 @@ class PlayerController extends Controller
                 echo $player->player_image;
             }
         } else if ($player->player_price_type == 'INR') {
+            
             if (Auth::user()->inr < $player->player_price) {
                 echo 'fail';
                 return;

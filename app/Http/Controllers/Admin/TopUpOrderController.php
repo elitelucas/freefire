@@ -60,10 +60,10 @@ class TopUpOrderController extends Controller
         //if it is the first top-up, user will receive the bonus.
         if($top_up_order->user->first_top_up==0){
             $total=$top_up->top_up_diamond+$top_up->top_up_first_bonus;
-            User::where('id',$top_up_order->top_up_order_user_id)->increment('diamond', $total);
+            User::where('id',$top_up_order->top_up_order_user_id)->increment('diamond', intval($total));
             User::where('id',$top_up_order->top_up_order_user_id)->update(['first_top_up'=>1]);
         }else{
-            User::where('id',$top_up_order->top_up_order_user_id)->increment('diamond', $top_up->top_up_diamond);
+            User::where('id',$top_up_order->top_up_order_user_id)->increment('diamond', intval($top_up->top_up_diamond));
         }
         TopUpOrder::where('top_up_order_id', $id)->update(['top_up_order_status'=>'approved']);
         echo 'success';

@@ -290,7 +290,7 @@ Player
                         $('#swal_before').hide();
                         $('#swal_after_error').hide();
                         $('#swal_after_success').show();
-                        //location.reload();
+                        location.reload();
 
                     }
                 }

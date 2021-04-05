@@ -106,6 +106,7 @@ class WalletController extends Controller
         $orderAmount = $_POST["orderAmount"];
         $referenceId = $_POST["referenceId"];
         $txStatus = $_POST["txStatus"];
+        dd($txStatus);
         $paymentMode = $_POST["paymentMode"];
         $txMsg = $_POST["txMsg"];
         $txTime = $_POST["txTime"];

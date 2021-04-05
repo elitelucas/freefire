@@ -114,12 +114,11 @@ class WalletController extends Controller
         $hash_hmac = hash_hmac('sha256', $data, $secretkey, true);
         $computedSignature = base64_encode($hash_hmac);
         if ($txStatus == "SUCCESS") {
-            dd($orderId);
             InrDepositOrder::where('id', $orderId)->update([
                 'status' => 'paid',
                 'order_id' => $orderId,
             ]);
-            User::where('id', Auth::id())->increment('inr', $orderAmount);
+            User::where('id', Auth::id())->increment('inr', intVal($orderAmount));
             return redirect()->route('wallet');
         } else {
             InrDepositOrder::where('id', $orderId)->update([

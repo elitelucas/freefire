@@ -31,8 +31,8 @@ Top up Cart
         <div id="infoDiv" class="text-center title-font">
 
         </div>
-        <div id="mainGift" class="pt-3 pb-3" width="100%" style="background-size: 100% 100%;  background-position:100%">
-            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+        <div id="mainGift" class="pt-3 pb-3 title-color" width="100%" style="background-size: 100% 100%;  background-position:100%">
+            <table id="datatable" class="table table-bordered dt-responsive nowrap title-color" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr class="title-color">
                         <th>Image</th>
@@ -52,7 +52,7 @@ Top up Cart
                     <tr class="title-color">
 
                         <td style="width:10%">
-                            <img class="w-100" src="{{asset('/assets/images/top-ups/'.$item->topUp->top_up_image)}}" />
+                            <img class="w-50" src="{{asset('/assets/images/top-ups/'.$item->topUp->top_up_image)}}" />
                         </td>
                         <td>{{$item->top_up_order_amount}}+{{$item->top_up_order_first_bonus_amount}}&nbsp;Diamonds top up freefire<br>
                             {{$item->player_id}}
@@ -113,6 +113,7 @@ Top up Cart
     <!-- Plugin Js-->
     <script src="{{ URL::asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
+    <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
     <script src="{{ URL::asset('assets/js/pages/dashboard.init.js') }}"></script>
     <script>
         function Del(top_up_order_id) {

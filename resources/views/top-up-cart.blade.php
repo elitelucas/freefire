@@ -62,8 +62,8 @@ Top up Cart
                         </td>
                         <td><input class="w-100" type="number" name="count" value="{{$item->top_up_order_count}}"></td>
                         <td>{{$item->top_up_order_inr_amount*$item->top_up_order_count}}</td>
-                        <td class="text-info" style="cursor:pointer" onclick="UpdateCart('{{$item->top_up_order_id}}',this)">
-                            <span>Update</span>
+                        <td class="text-info" >
+                            <span style="cursor:pointer" onclick="UpdateCart('{{$item->top_up_order_id}}',this)">Update</span>
                         </td>
                         <td style="cursor:pointer">
                             <i class="fas fa-window-close text-danger" onclick="Del('{{$item->top_up_order_id}}')"></i>

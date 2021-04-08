@@ -264,7 +264,7 @@ Player
                     $('.swal_after_error_text').text('stars');
                     return;
                 }
-            } else if (player_price_type == 'INR') {
+            } else if (player_price_type == 'inr') {
                 if (user_inr < player_price) {
                     $('#swal_before').hide();
                     $('#swal_after_error').show();

@@ -3,6 +3,7 @@
 @section('title')
 Top up Cart
 @endsection
+<link rel="stylesheet" type="text/css" href="{{ URL::asset('/assets/libs/datatables/datatables.min.css') }}">
 @section('body')
 
 <body class="index-background" data-layout="horizontal">
@@ -111,7 +112,7 @@ Top up Cart
     @section('script')
     <!-- Plugin Js-->
     <script src="{{ URL::asset('assets/libs/apexcharts/apexcharts.min.js') }}"></script>
-
+    <script src="{{ URL::asset('/assets/libs/datatables/datatables.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/pages/dashboard.init.js') }}"></script>
     <script>
         function Del(top_up_order_id) {

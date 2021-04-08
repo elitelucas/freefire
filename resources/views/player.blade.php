@@ -248,7 +248,7 @@ Player
 
             user_star = Number($('#user_star').text());
             user_diamond = Number($('#user_diamond').text());
-            user_inr = Number($('#user_inr').text());
+            user_inr = Number('{{Auth::user()->inr}}');
             if (player_price_type == 'diamonds') {
                 if (user_diamond < player_price) {
                     $('#swal_before').hide();

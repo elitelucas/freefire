@@ -32,7 +32,7 @@ Top up Cart
 
         </div>
         <div id="mainGift" class="pt-3 pb-3 title-color" width="100%" style="background-size: 100% 100%;  background-position:100%">
-            <table id="datatable" class="table table-bordered dt-responsive nowrap title-color" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+            <table id="datatable" class="table table-bordered dt-responsive title-color" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                 <thead>
                     <tr class="title-color">
                         <th>Image</th>
@@ -52,7 +52,7 @@ Top up Cart
                     <tr class="title-color">
 
                         <td style="width:10%">
-                            <img class="w-50" src="{{asset('/assets/images/top-ups/'.$item->topUp->top_up_image)}}" />
+                            <img class="w-100" src="{{asset('/assets/images/top-ups/'.$item->topUp->top_up_image)}}" />
                         </td>
                         <td>{{$item->top_up_order_amount}}+{{$item->top_up_order_first_bonus_amount}}&nbsp;Diamonds top up freefire<br>
                             {{$item->player_id}}
@@ -63,7 +63,7 @@ Top up Cart
                         <td><input class="w-100" type="number" name="count" value="{{$item->top_up_order_count}}"></td>
                         <td>{{$item->top_up_order_inr_amount*$item->top_up_order_count}}</td>
                         <td class="text-info" style="cursor:pointer" onclick="UpdateCart('{{$item->top_up_order_id}}',this)">
-                            Update
+                            <span>Update</span>
                         </td>
                         <td style="cursor:pointer">
                             <i class="fas fa-window-close text-danger" onclick="Del('{{$item->top_up_order_id}}')"></i>

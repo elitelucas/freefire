@@ -46,6 +46,18 @@ class AccountController extends Controller
 
     function index(Schedule $schedule)
     {
+        $user = User::where('id', Auth::id())->first();
+        $left_time = '';
+        if ($user->player->player_duration != 'lifetime') {
+            if ($user->player_changed_date != null) {
+                $diff_second = strtotime(date('Y:m:d h:i:s')) - strtotime($user->player_changed_date);
+                $diff_day = floor($diff_second / 60 / 60 / 24);
+
+                if ($diff_day > $user->player->player_duration) {
+                    User::where('id', Auth::id())->update(['player_id' => 1]);
+                }
+            }
+        }
         
         $current_date = date('Y-m-d');
         $player = Player::where('player_id', Auth::user()->player_id)->first();

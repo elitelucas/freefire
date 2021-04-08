@@ -92,7 +92,7 @@ class PlayerController extends Controller
                 User::where('id', Auth::id())->decrement('star', $player->player_price);
                 echo $player->player_image;
             }
-        } else if ($player->player_price_type == 'INR') {
+        } else if ($player->player_price_type == 'inr') {
             
             if (Auth::user()->inr < $player->player_price) {
                 echo 'fail';

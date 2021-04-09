@@ -113,7 +113,6 @@ class TournamentController extends Controller
         ]);
 
         $file = $request->file('image');
-        dd($file);
 
         if ($file) {
             //File Name

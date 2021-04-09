@@ -149,12 +149,7 @@ class AdminHomeController extends Controller
 
         $all_users = User::all();
 
-        dd($all_users);
-
         if (view()->exists($path)) {
-            foreach ($all_users as $key => $user) {
-                $all_users[$key]->user_food = UserFood::where('user_food_user_id', $user->id)->get();
-            }
             return view($path, ['all_users' => $all_users]);
         }
 

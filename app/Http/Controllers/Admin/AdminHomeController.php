@@ -155,6 +155,17 @@ class AdminHomeController extends Controller
 
         return view('pages-404');
     }
+    
+     public function getUserFood(Request $request)
+    {
+         $id=$request->input('id');
+        $user_food = UserFood::where('user_food_user_id',$id)->first();
+
+        echo json_encode($user_food);
+
+      
+    }
+    
 
     public function editUser(Request $request)
     {

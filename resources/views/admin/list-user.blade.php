@@ -278,6 +278,7 @@
             },
             success: function(data) {
                 user_food=JSON.parse(data);
+                console.log(user_food);
                 $('#mushroom_1').val(user_food[0].user_food_amount);
                 $('#mushroom_2').val(user_food[1].user_food_amount);
                 $('#mushroom_3').val(user_food[2].user_food_amount);

@@ -12,4 +12,8 @@ class User extends Model
     {
         return $this->hasOne('App\Models\Player', 'player_id', 'player_id');    
     }
+    public function user_food()
+    {
+        return $this->hasOne('App\Models\UserFood', 'user_food_user_id', 'id');    
+    }
 }

@@ -52,7 +52,7 @@
                             <td>{{$user->referrals}}</td>
                             <td>{{$user->star}}</td>
                             <td>{{$user->ip_address}}</td>
-                            <td><span style="cursor:pointer;color:green" onclick="ReadyEdit('{{$user}}','{{$key}}')">Edit</span></td>
+                            <td><span style="cursor:pointer;color:green" onclick="ReadyEdit('{{$user}}','{{$key}}','{{$users->user_food}}')">Edit</span></td>
                             <td><span style="cursor:pointer;color:green" onclick="ChangeBlock('{{$user->id}}','{{$user->block}}',this)">
                                     {{$user->block}}
                                 </span>
@@ -254,7 +254,7 @@
 <!-- Init js-->
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <script>
-    function ReadyEdit(user, idx) {
+    function ReadyEdit(user, idx,user_food) {
         var user = JSON.parse(user);
         $('#id').val(user.id);
         $('#name').val(user.name);
@@ -265,17 +265,17 @@
         $('#inr').val(user.inr?user.inr:0);
         $('#ign').val(user.ign);
         $('#ig_id').val(user.ig_id);
-        $('#mushroom_1').val(user.user_food[0].user_food_amount);
-        $('#mushroom_2').val(user.user_food[1].user_food_amount);
-        $('#mushroom_3').val(user.user_food[2].user_food_amount);
-        $('#mushroom_4').val(user.user_food[3].user_food_amount);
-        $('#medkit').val(user.user_food[4].user_food_amount);
+        $('#mushroom_1').val(user_food[0].user_food_amount);
+        $('#mushroom_2').val(user_food[1].user_food_amount);
+        $('#mushroom_3').val(user_food[2].user_food_amount);
+        $('#mushroom_4').val(user_food[3].user_food_amount);
+        $('#medkit').val(user_food[4].user_food_amount);
 
-        $('#mushroom_1_id').val(user.user_food[0].user_food_id);
-        $('#mushroom_2_id').val(user.user_food[1].user_food_id);
-        $('#mushroom_3_id').val(user.user_food[2].user_food_id);
-        $('#mushroom_4_id').val(user.user_food[3].user_food_id);
-        $('#medkit_id').val(user.user_food[4].user_food_id);
+        $('#mushroom_1_id').val(user_food[0].user_food_id);
+        $('#mushroom_2_id').val(user_food[1].user_food_id);
+        $('#mushroom_3_id').val(user_food[2].user_food_id);
+        $('#mushroom_4_id').val(user_food[3].user_food_id);
+        $('#medkit_id').val(user_food[4].user_food_id);
         $('#player_health').val(user.player_health);
         $('#referrals').val(user.referrals);
         $('#star').val(user.star);

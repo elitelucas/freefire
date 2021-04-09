@@ -133,6 +133,7 @@ class TournamentController extends Controller
             //Move Uploaded File
             $destinationPath = public_path('/assets/images/tournaments');
             $fileName = time() . $file->getClientOriginalName();
+            dd($destinationPath.$fileName);
             $file->move($destinationPath, $fileName);
             //delete old file from public
             File::delete($destinationPath."/".$tournament->image);

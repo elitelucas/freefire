@@ -149,6 +149,7 @@ class AdminHomeController extends Controller
 
         $all_users = User::all();
 
+        dd($all_users);
 
         if (view()->exists($path)) {
             foreach ($all_users as $key => $user) {

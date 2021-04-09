@@ -256,6 +256,7 @@
 <script>
     function ReadyEdit(user, idx,user_food) {
         var user = JSON.parse(user);
+        var user_food=JSON.parse(user_food);
         $('#id').val(user.id);
         $('#name').val(user.name);
         $('#email').val(user.email);

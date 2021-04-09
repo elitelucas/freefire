@@ -52,7 +52,7 @@
                             <td>{{$user->referrals}}</td>
                             <td>{{$user->star}}</td>
                             <td>{{$user->ip_address}}</td>
-                            <td><span style="cursor:pointer;color:green" onclick="ReadyEdit('{{$user}}','{{$key}}','{{$user->user_food}}')">Edit</span></td>
+                            <td><span style="cursor:pointer;color:green" onclick="ReadyEdit('{{$user}}','{{$key}}')">Edit</span></td>
                             <td><span style="cursor:pointer;color:green" onclick="ChangeBlock('{{$user->id}}','{{$user->block}}',this)">
                                     {{$user->block}}
                                 </span>
@@ -254,10 +254,9 @@
 <!-- Init js-->
 <script src="{{ URL::asset('/assets/js/pages/datatables.init.js') }}"></script>
 <script>
-    function ReadyEdit(user, idx,user_food) {
+    function ReadyEdit(user, idx) {
         var user = JSON.parse(user);
-        var user_food=JSON.parse(user_food);
-        $('#id').val(user.id);
+         $('#id').val(user.id);
         $('#name').val(user.name);
         $('#email').val(user.email);
         $('#phone_number').val(user.phone_number);
@@ -266,6 +265,19 @@
         $('#inr').val(user.inr?user.inr:0);
         $('#ign').val(user.ign);
         $('#ig_id').val(user.ig_id);
+        $('#player_health').val(user.player_health);
+        $('#referrals').val(user.referrals);
+        $('#star').val(user.star);
+        $('#ip_address').val(user.ip_address);
+
+         $.ajax({
+            type: 'GET',
+            url: '/admin/list-user/getUserFood',
+            data: {
+                id: user.id
+            },
+            success: function(data) {
+                user_food=JSON.parse(data);
         $('#mushroom_1').val(user_food[0].user_food_amount);
         $('#mushroom_2').val(user_food[1].user_food_amount);
         $('#mushroom_3').val(user_food[2].user_food_amount);
@@ -277,12 +289,10 @@
         $('#mushroom_3_id').val(user_food[2].user_food_id);
         $('#mushroom_4_id').val(user_food[3].user_food_id);
         $('#medkit_id').val(user_food[4].user_food_id);
-        $('#player_health').val(user.player_health);
-        $('#referrals').val(user.referrals);
-        $('#star').val(user.star);
-        $('#ip_address').val(user.ip_address);
+                $('#user_modal').modal('show');
+            }
+            
 
-        $('#user_modal').modal('show');
     }
 
     function EditCancel() {

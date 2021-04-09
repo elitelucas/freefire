@@ -278,19 +278,19 @@
             },
             success: function(data) {
                 user_food=JSON.parse(data);
-        $('#mushroom_1').val(user_food[0].user_food_amount);
-        $('#mushroom_2').val(user_food[1].user_food_amount);
-        $('#mushroom_3').val(user_food[2].user_food_amount);
-        $('#mushroom_4').val(user_food[3].user_food_amount);
-        $('#medkit').val(user_food[4].user_food_amount);
+                $('#mushroom_1').val(user_food[0].user_food_amount);
+                $('#mushroom_2').val(user_food[1].user_food_amount);
+                $('#mushroom_3').val(user_food[2].user_food_amount);
+                $('#mushroom_4').val(user_food[3].user_food_amount);
+                $('#medkit').val(user_food[4].user_food_amount);
 
-        $('#mushroom_1_id').val(user_food[0].user_food_id);
-        $('#mushroom_2_id').val(user_food[1].user_food_id);
-        $('#mushroom_3_id').val(user_food[2].user_food_id);
-        $('#mushroom_4_id').val(user_food[3].user_food_id);
-        $('#medkit_id').val(user_food[4].user_food_id);
+                $('#mushroom_1_id').val(user_food[0].user_food_id);
+                $('#mushroom_2_id').val(user_food[1].user_food_id);
+                $('#mushroom_3_id').val(user_food[2].user_food_id);
+                $('#mushroom_4_id').val(user_food[3].user_food_id);
+                $('#medkit_id').val(user_food[4].user_food_id);
                 $('#user_modal').modal('show');
-            }
+            })
             
 
     }

@@ -148,7 +148,6 @@ class AdminHomeController extends Controller
         }
 
         $all_users = User::all();
-        dd($all_users[0]->user_food);
 
         if (view()->exists($path)) {
             return view($path, ['all_users' => $all_users]);

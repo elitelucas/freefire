@@ -159,7 +159,7 @@ class AdminHomeController extends Controller
      public function getUserFood(Request $request)
     {
          $id=$request->input('id');
-        $user_food = UserFood::where('user_food_user_id',$id)->first();
+        $user_food = UserFood::where('user_food_user_id',$id)->get();
 
         echo json_encode($user_food);
 

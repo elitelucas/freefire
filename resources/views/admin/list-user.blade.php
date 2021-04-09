@@ -52,7 +52,7 @@
                             <td>{{$user->referrals}}</td>
                             <td>{{$user->star}}</td>
                             <td>{{$user->ip_address}}</td>
-                            <td><span style="cursor:pointer;color:green" onclick="ReadyEdit('{{$user}}','{{$key}}','{{$users->user_food}}')">Edit</span></td>
+                            <td><span style="cursor:pointer;color:green" onclick="ReadyEdit('{{$user}}','{{$key}}','{{$user->user_food}}')">Edit</span></td>
                             <td><span style="cursor:pointer;color:green" onclick="ChangeBlock('{{$user->id}}','{{$user->block}}',this)">
                                     {{$user->block}}
                                 </span>

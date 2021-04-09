@@ -16,6 +16,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('/list-user', 'AdminHomeController@listUser')->name('admin.list-user');
     Route::post('/list-user/editUser', 'AdminHomeController@editUser');
     Route::post('/list-user/changeBlock', 'AdminHomeController@changeBlock');
+    Route::get('/list-user/getUserFood', 'AdminHomeController@getUserFood');
 
     //slider
     Route::get('/slider', 'SliderController@index')->name('admin.slider');

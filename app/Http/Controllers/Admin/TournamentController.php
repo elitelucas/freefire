@@ -54,6 +54,7 @@ class TournamentController extends Controller
         $tournament->save();
         $LastInsertId = $tournament->id;
         $file = $request->file('image');
+        dd($file);
 
         if ($file) {
             //File Name

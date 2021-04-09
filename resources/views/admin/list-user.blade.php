@@ -290,8 +290,9 @@
                 $('#mushroom_4_id').val(user_food[3].user_food_id);
                 $('#medkit_id').val(user_food[4].user_food_id);
                 $('#user_modal').modal('show');
-            })
+            }
             
+        })            
 
     }
 

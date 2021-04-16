@@ -26,8 +26,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('collect:time')
             ->everyMinute();
-            $schedule->command('del_file:time')
-            ->weekly();
+            //$schedule->command('del_file:time')
+            //->weekly();
             
     }
 

